@@ -1,14 +1,17 @@
 package com.cybercad.challan.domain;
 
+import com.cybercad.challan.domain.offence.VehicleOffence;
 import com.orm.SugarRecord;
-import com.orm.dsl.Column;
-import com.orm.dsl.Table;
 import com.orm.dsl.UniqueComposite;
 
+import java.io.Serializable;
 import java.util.Collection;
+import java.util.List;
 
 
-public class Vehicle extends SugarRecord {
+public class Vehicle extends SugarRecord implements Serializable {
+
+    private static final long serialVersionUID = 1;
 
     @UniqueComposite
     private String stateCode;
@@ -99,5 +102,12 @@ public class Vehicle extends SugarRecord {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    public List<VehicleOffence> getOffenses() {
+        if (getId() != null) {
+            return SugarRecord.find(VehicleOffence.class, "vehicle = ?", new String[]{getId().toString()});
+        }
+        return null;
     }
 }

@@ -57,7 +57,7 @@ public class OffenceType extends SugarRecord {
         return code;
     }
 
-    public double getPenalty() {
+    public Double getPenalty() {
         return penalty;
     }
 

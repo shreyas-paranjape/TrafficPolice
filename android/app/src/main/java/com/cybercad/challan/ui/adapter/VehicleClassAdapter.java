@@ -15,17 +15,14 @@ import java.util.Locale;
 
 public class VehicleClassAdapter extends ArrayAdapter<LicenceVehicleClass> {
 
-    private Context context;
-
     public VehicleClassAdapter(Context context, List<LicenceVehicleClass> vehicleClasses) {
         super(context, R.layout.item_vehicle_class, vehicleClasses);
-        this.context = context;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
-            convertView = SystemUtil.getLayoutInflator(context)
+            convertView = SystemUtil.getLayoutInflator(getContext())
                     .inflate(R.layout.item_vehicle_class, parent, false);
         }
         setFields(convertView, getItem(position));

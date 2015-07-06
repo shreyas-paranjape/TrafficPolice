@@ -1,6 +1,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="fill_parent"
     android:orientation="vertical"
     android:paddingLeft="16dp"
     android:paddingRight="16dp">
@@ -12,5 +12,33 @@
         android:layout_marginTop="20dp"
         android:text="@string/add_offence_header"
         android:textSize="20dp" />
+
+    <GridView
+        android:id="@+id/offencesGrid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnWidth="90dp"
+        android:gravity="center"
+        android:horizontalSpacing="10dp"
+        android:numColumns="auto_fit"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="10dp" />
+
+    <LinearLayout
+        android:id="@+id/wizard_button_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:id="@+id/wizard_next_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/action_next" />
+
+    </LinearLayout>
 
 </LinearLayout>

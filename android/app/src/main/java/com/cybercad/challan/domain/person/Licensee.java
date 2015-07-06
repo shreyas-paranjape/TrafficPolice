@@ -7,11 +7,14 @@ import com.cybercad.challan.domain.offence.Offence;
 import com.cybercad.challan.util.CollectionUtil;
 import com.orm.SugarRecord;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 
-public class Licensee extends SugarRecord {
+public class Licensee extends SugarRecord implements Serializable {
+
+    private static final long serialVersionUID = 1;
 
     private static final String TAG = Licensee.class.getName();
     private PersonalDetails personalDetails;

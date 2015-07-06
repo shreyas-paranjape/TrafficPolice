@@ -2,20 +2,18 @@ package com.cybercad.challan.domain.person;
 
 import android.text.TextUtils;
 
-import com.cybercad.challan.domain.Licence.Licence;
-import com.cybercad.challan.domain.offence.Offence;
 import com.orm.SugarRecord;
-import com.orm.dsl.Column;
-import com.orm.dsl.Table;
 
+import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 
 /**
  * Created by shreyas on 12/6/15.
  *
  */
-public class PersonalDetails extends SugarRecord {
+public class PersonalDetails extends SugarRecord implements Serializable{
+
+    private static final long serialVersionUID = 1;
 
     private String lastName;
     private String middleName;

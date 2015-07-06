@@ -1,10 +1,10 @@
 package com.cybercad.challan.ui.wizard.step;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
@@ -12,14 +12,19 @@ import android.widget.ListView;
 import com.cybercad.challan.R;
 import com.cybercad.challan.domain.Vehicle;
 import com.cybercad.challan.ui.adapter.VehicleAdapter;
+import com.cybercad.challan.ui.wizard.IssueChallanWizardLayout;
 
 import org.codepond.wizardroid.WizardStep;
+import org.codepond.wizardroid.infrastructure.Bus;
 
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class VehicleSearch extends WizardStep {
 
-    private static final String TAG = VehicleSearch.class.getName();
+    private static final String TAG = VehicleSearch.class.getSimpleName();
 
     private VehicleAdapter vehicleAdapter;
     private EditText vehicleNumberQuery;
@@ -28,12 +33,12 @@ public class VehicleSearch extends WizardStep {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        dummyData();//TODO remove this
         View v = initView(inflater, container);
         setListAdapter();
-        setSearchClickListener();
+        setListeners();
         return v;
     }
+
 
     private View initView(LayoutInflater inflater, ViewGroup container) {
         View v = inflater.inflate(R.layout.step_vehicle_search, container, false);
@@ -46,9 +51,19 @@ public class VehicleSearch extends WizardStep {
     private void setListAdapter() {
         vehicleAdapter = new VehicleAdapter(getActivity(), new ArrayList<Vehicle>());
         listView.setAdapter(vehicleAdapter);
+
     }
 
-    private void setSearchClickListener() {
+    private void setListeners() {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Map<String, Serializable> payload = new HashMap<String, Serializable>();
+                payload.put("vehicle", vehicleAdapter.getItem(position));
+                notifyCompleted();
+                Bus.getInstance().post(new IssueChallanWizardLayout.WizardEvent(payload, IssueChallanWizardLayout.WizardEvent.Type.NEXT));
+            }
+        });
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,8 +86,4 @@ public class VehicleSearch extends WizardStep {
         }
     }
 
-    private void dummyData() {
-        new Vehicle("GA05", "K", "7100", "Yamaha FZ-S", "BLUE").save();
-        Log.d(TAG, "Vehicles" + Vehicle.getAll());
-    }
 }

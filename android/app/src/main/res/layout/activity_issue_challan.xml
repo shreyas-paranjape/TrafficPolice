@@ -7,5 +7,5 @@
         android:id="@+id/form_wizard_fragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:name="com.cybercad.challan.ui.wizard.IssueChallanWizard"/>
+        android:name="com.cybercad.challan.ui.wizard.IssueChallanWizardLayout"/>
 </FrameLayout >

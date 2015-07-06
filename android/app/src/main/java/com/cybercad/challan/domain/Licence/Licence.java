@@ -1,10 +1,8 @@
 package com.cybercad.challan.domain.Licence;
 
 import com.orm.SugarRecord;
-import com.orm.dsl.Column;
-import com.orm.dsl.Table;
-import com.orm.dsl.Unique;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -12,7 +10,9 @@ import java.util.List;
  * Created by shreyas on 12/6/15.
  *
  */
-public class Licence extends SugarRecord {
+public class Licence extends SugarRecord implements Serializable {
+
+    private static final long serialVersionUID = 1;
 
     private String licenceNumber;
     private Date issueDate;
