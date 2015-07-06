@@ -28,6 +28,15 @@ public class IssueChallan extends FragmentActivity {
         OffenceType noHelmet = new OffenceType("NH", "No helmet", 500);
         noHelmet.save();
 
+        OffenceType notWearingSeatBelt = new OffenceType("NSB", "Not wearing a seat belt", 300);
+        notWearingSeatBelt.save();
+
+        OffenceType tintedGlass = new OffenceType("TG", "tinted glass", 1000);
+        tintedGlass.save();
+
+        OffenceType noDrivingLicence = new OffenceType("NDL", "No driving licence", 400);
+        noDrivingLicence.save();
+
         Licence licence = new Licence("12345", new Date(), new Date());
         LicenceVehicleClass twoWheeler = new LicenceVehicleClass("TW", new Date(), "Two wheeler", licence);
 

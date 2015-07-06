@@ -8,37 +8,32 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="20dp"
+        android:layout_weight="1"
         android:text="@string/add_offence_header"
         android:textSize="20dp" />
 
     <GridView
         android:id="@+id/offencesGrid"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="8"
         android:columnWidth="90dp"
         android:gravity="center"
         android:horizontalSpacing="10dp"
-        android:numColumns="auto_fit"
+        android:numColumns="2"
         android:stretchMode="columnWidth"
         android:verticalSpacing="10dp" />
 
-    <LinearLayout
-        android:id="@+id/wizard_button_bar"
+
+    <Button
+        android:id="@+id/btn_nxt_add_offence"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_alignParentBottom="true"
-        android:orientation="horizontal">
+        android:layout_weight="1"
+        android:text="@string/action_next" />
 
-
-        <Button
-            android:id="@+id/wizard_next_button"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/action_next" />
-
-    </LinearLayout>
 
 </LinearLayout>

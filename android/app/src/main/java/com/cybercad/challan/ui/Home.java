@@ -27,7 +27,8 @@ public class Home extends ActionBarActivity {
         issueFine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Home.this,IssueChallan.class));
+                startActivity(new Intent(Home.this, IssueChallan.class));
+                finish();
                 //bluetoothPrinter.print("Hello world\r\n");
             }
         });

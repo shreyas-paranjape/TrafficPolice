@@ -11,6 +11,15 @@ public class VehicleOffence extends SugarRecord {
     private OffenceType offenceType;
     private Vehicle vehicle;
 
+    public VehicleOffence() {
+    }
+
+    public VehicleOffence(Vehicle vehicleDate, Date issueDate, OffenceType offenceType) {
+        this.vehicle = vehicle;
+        this.issueDate = issueDate;
+        this.offenceType = offenceType;
+    }
+
     public Date getIssueDate() {
         return issueDate;
     }

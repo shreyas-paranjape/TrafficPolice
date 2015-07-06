@@ -18,4 +18,11 @@
     <string name="licence_number_hint">Enter last five digits</string>
     <string name="licensee_image">Licensee image</string>
     <string name="label_add_offence">Add offence</string>
+
+    <string name="vehicle_info">Vehicle info</string>
+    <string name="licensee_info">License info</string>
+    <string name="action_finish">Finish</string>
+    <string name="action_print">Print</string>
+
+
 </resources>

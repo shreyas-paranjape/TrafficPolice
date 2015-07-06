@@ -1,5 +1,6 @@
 package com.cybercad.challan.domain;
 
+import com.cybercad.challan.domain.offence.Offence;
 import com.cybercad.challan.domain.offence.VehicleOffence;
 import com.orm.SugarRecord;
 import com.orm.dsl.UniqueComposite;
@@ -53,6 +54,20 @@ public class Vehicle extends SugarRecord implements Serializable {
         return find(Vehicle.class, "number like ?", new String[]{"%" + number});
     }
 
+    public void addOffence(VehicleOffence offence) {
+        if (getId() != null) {
+            offence.setVehicle(this);
+            offence.save();
+        }
+    }
+
+    public List<VehicleOffence> getOffenses() {
+        if (getId() != null) {
+            return SugarRecord.find(VehicleOffence.class, "vehicle = ?", new String[]{getId().toString()});
+        }
+        return null;
+    }
+
     @Override
     public String toString() {
         return "Vehicle{" +
@@ -104,10 +119,5 @@ public class Vehicle extends SugarRecord implements Serializable {
         this.color = color;
     }
 
-    public List<VehicleOffence> getOffenses() {
-        if (getId() != null) {
-            return SugarRecord.find(VehicleOffence.class, "vehicle = ?", new String[]{getId().toString()});
-        }
-        return null;
-    }
+
 }

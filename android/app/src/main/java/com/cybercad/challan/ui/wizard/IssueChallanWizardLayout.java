@@ -1,5 +1,6 @@
 package com.cybercad.challan.ui.wizard;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,7 +17,6 @@ import com.google.common.cache.CacheBuilder;
 
 import org.codepond.wizardroid.WizardFlow;
 import org.codepond.wizardroid.WizardFragment;
-import org.codepond.wizardroid.WizardStep;
 import org.codepond.wizardroid.infrastructure.Bus;
 import org.codepond.wizardroid.infrastructure.Subscriber;
 import org.codepond.wizardroid.persistence.ContextManager;
@@ -48,20 +48,28 @@ public class IssueChallanWizardLayout extends WizardFragment implements Subscrib
         return wizardLayout;
     }
 
+    public void onSaveInstanceState(Bundle outState) {
+    }
 
     public void onWizardComplete() {
         super.onWizardComplete();
-        cache.invalidateAll();
-        cache.cleanUp();
+        if (cache != null) {
+            cache.invalidateAll();
+            cache.cleanUp();
+        }
+        Activity parent = getActivity();
+        if (parent != null) {
+            parent.finish();
+        }
     }
 
     @Override
     public WizardFlow onSetup() {
         Bus.getInstance().register(this, WizardEvent.class);
         return new WizardFlow.Builder()
-                //.addStep(VehicleSearch.class)
-                //.addStep(LicenceSearch.class)
-                //.addStep(VehicleLicenceInfo.class)
+                .addStep(VehicleSearch.class)
+                .addStep(LicenceSearch.class)
+                .addStep(VehicleLicenceInfo.class)
                 .addStep(AddOffence.class)
                 .addStep(PrintChallan.class)
                 .create();
@@ -94,7 +102,6 @@ public class IssueChallanWizardLayout extends WizardFragment implements Subscrib
         private final Type type;
 
         public static enum Type {NEXT, BACK}
-
 
         public WizardEvent(Map<String, Serializable> payload, Type type) {
             this.payload = payload;

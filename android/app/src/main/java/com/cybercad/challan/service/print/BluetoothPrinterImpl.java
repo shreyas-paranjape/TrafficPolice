@@ -119,7 +119,7 @@ public class BluetoothPrinterImpl implements BluetoothPrinter {
         }
 
         protected void onPostExecute(Long result) {
-            Toast.makeText(BluetoothPrinterImpl.this.context, "Connected to printer", Toast.LENGTH_LONG).show();
+           // Toast.makeText(BluetoothPrinterImpl.this.context, "Connected to printer", Toast.LENGTH_LONG).show();
         }
     }
 }

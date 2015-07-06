@@ -39,9 +39,9 @@ public class OffenceAdapter extends ArrayAdapter<Offence> {
     }
 
     private void setDate(View row, Offence current) {
-        String formattedBirthDate = new SimpleDateFormat("dd-MM-yyyy",
+        String issueDate = new SimpleDateFormat("dd-MM-yyyy",
                 Locale.getDefault()).format(current.getIssueDate());
-        SystemUtil.setTextViewText(row, R.id.ofc_date, formattedBirthDate);
+        SystemUtil.setTextViewText(row, R.id.ofc_date, issueDate);
     }
 
     private void setDescription(View row, OffenceType current) {
