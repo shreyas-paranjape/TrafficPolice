@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
 import com.cybercad.challan.R;
-import com.cybercad.challan.domain.Licence.LicenceVehicleClass;
+import com.cybercad.challan.domain.dmv.licence.LicenceVehicleClass;
 import com.cybercad.challan.util.SystemUtil;
 
 import java.text.SimpleDateFormat;
@@ -42,11 +42,11 @@ public class VehicleClassAdapter extends ArrayAdapter<LicenceVehicleClass> {
     }
 
     private void setDescription(View row, LicenceVehicleClass current) {
-        SystemUtil.setTextViewText(row, R.id.vc_desc, current.getDescription());
+        //TODO SystemUtil.setTextViewText(row, R.id.vc_desc, current.getDescription());
     }
 
     private void setCode(View row, LicenceVehicleClass current) {
-        SystemUtil.setTextViewText(row, R.id.vc_code, current.getCode());
+        //TODO SystemUtil.setTextViewText(row, R.id.vc_code, current.getCode());
     }
 
 }

@@ -1,4 +1,4 @@
-package com.cybercad.challan.ui;
+package com.cybercad.challan.ui.component;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,7 +12,7 @@ import com.cybercad.challan.R;
 import com.cybercad.challan.service.print.BluetoothPrinter;
 
 
-public class Home extends ActionBarActivity {
+public class HomeActivity extends ActionBarActivity {
 
     private static final String TAG = "Home";
     private BluetoothPrinter bluetoothPrinter;
@@ -27,14 +27,10 @@ public class Home extends ActionBarActivity {
         issueFine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Home.this, IssueChallan.class));
+                startActivity(new Intent(HomeActivity.this, IssueChallanActivity.class));
                 finish();
-                //bluetoothPrinter.print("Hello world\r\n");
             }
         });
-        //bluetoothPrinter = new BluetoothPrinterImpl(this);
-        // TODO Need to make this configurable
-        //bluetoothPrinter.connect("MOB-80");
     }
 
     @Override

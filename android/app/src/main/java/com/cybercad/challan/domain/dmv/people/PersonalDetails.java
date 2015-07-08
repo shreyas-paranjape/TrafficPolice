@@ -1,26 +1,27 @@
-package com.cybercad.challan.domain.person;
+package com.cybercad.challan.domain.dmv.people;
 
 import android.text.TextUtils;
 
 import com.orm.SugarRecord;
+import com.orm.dsl.UniqueComposite;
 
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * Created by shreyas on 12/6/15.
- *
- */
-public class PersonalDetails extends SugarRecord implements Serializable{
+public class PersonalDetails extends SugarRecord implements Serializable {
 
     private static final long serialVersionUID = 1;
 
+    @UniqueComposite
     private String lastName;
+    @UniqueComposite
     private String middleName;
+    @UniqueComposite
     private String firstName;
+    @UniqueComposite
     private Date dateOfBirth;
 
-    public PersonalDetails(){
+    public PersonalDetails() {
     }
 
     public PersonalDetails(String lastName, String middleName, String firstName, Date dateOfBirth) {
@@ -74,6 +75,6 @@ public class PersonalDetails extends SugarRecord implements Serializable{
     }
 
     public String getName() {
-        return TextUtils.join(" ",new String[]{lastName,middleName,firstName});
+        return TextUtils.join(" ", new String[]{lastName, middleName, firstName});
     }
 }

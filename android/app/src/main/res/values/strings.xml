@@ -3,19 +3,22 @@
 
     <string name="action_settings">Settings</string>
 
-    <string name="next">Issue fine</string>
+    <string name="issue_fine">Issue fine</string>
+    <string name="search_vehicle">Search vehicle</string>
+    <string name="search_licence">Search licence</string>
+
 
     <string name="add_offence_header">Add offence</string>
     <string name="vehicle_info_header">Vehicle Information</string>
     <string name="licence_info_header">Licence Information</string>
     <string name="print_header">Print</string>
 
-    <string name="vehicle_number_hint">Enter number</string>
+    <string name="vehicle_number_hint">Enter vehicle number</string>
     <string name="Search">Search</string>
     <string name="personal_details">Personal details</string>
     <string name="licence_details">Licence details</string>
     <string name="previous_offences">Previous offences</string>
-    <string name="licence_number_hint">Enter last five digits</string>
+    <string name="licence_number_hint">Enter licence number</string>
     <string name="licensee_image">Licensee image</string>
     <string name="label_add_offence">Add offence</string>
 
@@ -23,6 +26,7 @@
     <string name="licensee_info">License info</string>
     <string name="action_finish">Finish</string>
     <string name="action_print">Print</string>
+    <string name="action_confirm">Confirm</string>
 
 
 </resources>

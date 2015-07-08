@@ -1,31 +1,46 @@
-package com.cybercad.challan.domain.Licence;
+package com.cybercad.challan.domain.dmv.licence;
 
+import android.util.Log;
+
+import com.cybercad.challan.domain.dmv.offence.LicenceOffence;
+import com.cybercad.challan.domain.dmv.people.Licensee;
+import com.cybercad.challan.util.CollectionUtil;
 import com.orm.SugarRecord;
+import com.orm.dsl.NotNull;
+import com.orm.dsl.Unique;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
 
-/**
- * Created by shreyas on 12/6/15.
- *
- */
 public class Licence extends SugarRecord implements Serializable {
 
     private static final long serialVersionUID = 1;
 
+    @Unique
     private String licenceNumber;
+    @NotNull
     private Date issueDate;
+    @NotNull
     private Date expiryDate;
+    @NotNull
+    private Licensee licensee;
 
-
-    public Licence(){
+    public Licence() {
     }
 
-    public Licence(String licenceNumber, Date issueDate, Date expiryDate) {
+    public Licence(String licenceNumber, Licensee licensee, Date issueDate, Date expiryDate) {
         this.licenceNumber = licenceNumber;
         this.issueDate = issueDate;
         this.expiryDate = expiryDate;
+        this.licensee = licensee;
+    }
+
+    public static Collection<Licence> searchByNumber(String licenceNumber) {
+        return find(Licence.class, "licence_number like ?", new String[]{"%" + licenceNumber + "%"});
     }
 
     public String getLicenceNumber() {
@@ -52,28 +67,21 @@ public class Licence extends SugarRecord implements Serializable {
         this.expiryDate = expiryDate;
     }
 
-    public List<LicenceVehicleClass> getVehicleClasses() {
-        return find(LicenceVehicleClass.class,"Licence = ?",new String[]{getId().toString()});
+    public Licensee getLicensee() {
+        return licensee;
     }
 
-    public void setVehicleClasses(List<LicenceVehicleClass> vehicleClasses) {
-        for(LicenceVehicleClass licenceVehicleClass : vehicleClasses){
-            addVehicleClass(licenceVehicleClass);
-        }
-    }
-
-    public void addVehicleClass(LicenceVehicleClass licenceVehicleClass){
-        licenceVehicleClass.setLicence(this);
-        licenceVehicleClass.save();
+    public void setLicensee(Licensee licensee) {
+        this.licensee = licensee;
     }
 
     @Override
     public String toString() {
         return "Licence{" +
-                "id=" + this.getId() +
                 "licenceNumber='" + licenceNumber + '\'' +
                 ", issueDate=" + issueDate +
                 ", expiryDate=" + expiryDate +
+                ", licensee=" + licensee +
                 '}';
     }
 }

@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
 import com.cybercad.challan.R;
-import com.cybercad.challan.domain.offence.OffenceType;
+import com.cybercad.challan.domain.dmv.offence.OffenceType;
 import com.cybercad.challan.util.SystemUtil;
 
 import java.util.List;

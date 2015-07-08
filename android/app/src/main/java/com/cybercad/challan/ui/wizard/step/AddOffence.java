@@ -5,26 +5,46 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.GridView;
+import android.widget.TabHost;
+import android.widget.ToggleButton;
 
 import com.cybercad.challan.R;
-import com.cybercad.challan.domain.offence.OffenceType;
+import com.cybercad.challan.domain.dmv.offence.OffenceType;
+import com.cybercad.challan.service.cache.ObjectCache;
 import com.cybercad.challan.ui.adapter.OffenceTypeAdapter;
-import com.cybercad.challan.ui.wizard.IssueChallanWizardLayout;
+import com.cybercad.challan.ui.wizard.layout.IssueChallanWizardLayout;
 import com.cybercad.challan.util.CollectionUtil;
+import com.google.common.collect.ImmutableList;
 
 import org.codepond.wizardroid.WizardStep;
 import org.codepond.wizardroid.infrastructure.Bus;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class AddOffence extends WizardStep {
 
     private static final String TAG = AddOffence.class.getName();
+    private ArrayAdapter<OffenceType> vehicleOffenceTypeAdapter;
+    private ArrayAdapter<OffenceType> licenceOffenceTypeAdapter;
+    private GridView vehicleOffencesGrid;
+    private GridView licenceOffencesGrid;
+    private TabHost offencesContainer;
+    private final List<OffenceType> offencesSelected = new ArrayList<>();
 
     public AddOffence() {
         super();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
     }
 
     @Override
@@ -35,26 +55,114 @@ public class AddOffence extends WizardStep {
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Bus.getInstance().post(
-                        new IssueChallanWizardLayout.WizardEvent(
-                                null, IssueChallanWizardLayout.WizardEvent.Type.NEXT));
+                notifyCompleted();
+                try {
+                    Bus.getInstance().post(
+                            new IssueChallanWizardLayout.WizardEvent(
+                                    null, IssueChallanWizardLayout.WizardEvent.Type.NEXT));
+                } catch (Exception e) {
+                }
             }
         });
         return v;
     }
 
     private void initGrid(View v) {
-        List<OffenceType> offenceTypes = OffenceType.getAll();
-        Log.d(TAG, "Offence Types :" + CollectionUtil.toString(offenceTypes));
-        OffenceTypeAdapter offenceTypeAdapter = new OffenceTypeAdapter(getActivity(), offenceTypes);
-        GridView offencesGrid = (GridView) v.findViewById(R.id.offencesGrid);
-        offencesGrid.setAdapter(offenceTypeAdapter);
+        offencesContainer = (TabHost) v.findViewById(R.id.offencesContainer);
+        offencesContainer.setup();
+        offencesContainer.addTab(offencesContainer.newTabSpec("Vehicle_Offences")
+                .setIndicator("Vehicle Offences").setContent(R.id.tabVehicleOffence));
+        offencesContainer.addTab(offencesContainer.newTabSpec("Licence_Offences")
+                .setIndicator("Licence Offences").setContent(R.id.tabLicenceOffence));
+
+        List<OffenceType> vehicleOffences = OffenceType.getVehicleOffences();
+        List<OffenceType> licenceOffences = OffenceType.getLicenceOffences();
+
+        vehicleOffenceTypeAdapter = new ArrayAdapter<OffenceType>(getActivity(), R.layout.item_offence_type, vehicleOffences) {
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+                final OffenceType offenceType = getItem(position);
+                ToggleButton button = new ToggleButton(getContext());
+                button.setBackgroundDrawable(getContext().getResources().getDrawable(R.drawable.toggle));
+                button.setText(offenceType.getDescription());
+                button.setTextOff(offenceType.getDescription());
+                button.setTextOn(offenceType.getDescription());
+                button.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                        if (isChecked) {
+                            offencesSelected.add(offenceType);
+                        } else {
+                            offencesSelected.remove(offenceType);
+                        }
+                        Log.i(TAG, "" + CollectionUtil.toString(offencesSelected));
+                    }
+                });
+                return button;
+            }
+        };
+        vehicleOffencesGrid = (GridView) v.findViewById(R.id.vehicleOffencesGrid);
+        vehicleOffencesGrid.setAdapter(vehicleOffenceTypeAdapter);
+
+        licenceOffenceTypeAdapter = new ArrayAdapter<OffenceType>(getActivity(), R.layout.item_offence_type, licenceOffences) {
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+                final OffenceType offenceType = getItem(position);
+                ToggleButton button = new ToggleButton(getContext());
+                button.setBackgroundDrawable(getContext().getResources().getDrawable(R.drawable.toggle));
+                button.setText(offenceType.getDescription());
+                button.setTextOff(offenceType.getDescription());
+                button.setTextOn(offenceType.getDescription());
+                button.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                        if (isChecked) {
+                            offencesSelected.add(offenceType);
+                        } else {
+                            offencesSelected.remove(offenceType);
+                        }
+                        Log.i(TAG, "" + CollectionUtil.toString(offencesSelected));
+                    }
+                });
+                return button;
+            }
+        };
+        licenceOffencesGrid = (GridView) v.findViewById(R.id.licenceOffencesGrid);
+        licenceOffencesGrid.setAdapter(licenceOffenceTypeAdapter);
     }
 
     @Override
     public void onExit(int exitCode) {
         switch (exitCode) {
             case WizardStep.EXIT_NEXT:
+
+                /*for (int i = 0; i < vehicleOffenceTypeAdapter.getCount(); i++) {
+                    CompoundButton offenceButton = (CompoundButton) vehicleOffencesGrid.getChildAt(i);
+                    try {
+                        if (offenceButton.isChecked()) {
+                            offenceButton.setChecked(false);
+                            offencesSelected.add(vehicleOffenceTypeAdapter.getItem(i));
+                        }
+                    } catch (Exception e) {
+                        Log.i(TAG, e.getMessage());
+                    }
+                }
+                for (int i = 0; i < licenceOffenceTypeAdapter.getCount(); i++) {
+                    CompoundButton offenceButton = (CompoundButton) licenceOffencesGrid.getChildAt(i);
+                    try {
+                        if (offenceButton.isChecked()) {
+                            offenceButton.setChecked(false);
+                            offencesSelected.add(licenceOffenceTypeAdapter.getItem(i));
+                        }
+                    } catch (Exception e) {
+                        Log.i(TAG, e.getMessage());
+                    }
+                }*/
+                Map<String, Object> payload = new HashMap<>();
+                Log.i(TAG, "" + CollectionUtil.toString(offencesSelected));
+                payload.put("offences", ImmutableList.copyOf(offencesSelected));
+                ObjectCache.put(payload);
+                //offencesSelected.clear();
                 break;
             case WizardStep.EXIT_PREVIOUS:
                 break;

@@ -1,8 +1,9 @@
-package com.cybercad.challan.domain;
+package com.cybercad.challan.domain.dmv.vehicle;
 
-import com.cybercad.challan.domain.offence.Offence;
-import com.cybercad.challan.domain.offence.VehicleOffence;
+import com.cybercad.challan.domain.dmv.offence.VehicleOffence;
+import com.cybercad.challan.domain.dmv.people.VehicleOwner;
 import com.orm.SugarRecord;
+import com.orm.dsl.NotNull;
 import com.orm.dsl.UniqueComposite;
 
 import java.io.Serializable;
@@ -20,25 +21,40 @@ public class Vehicle extends SugarRecord implements Serializable {
     private String numberPrefix;
     @UniqueComposite
     private String number;
-
+    @NotNull
     private String make;
+    @NotNull
     private String color;
-
-    //private Person owner;
-    //private List<Offence> offences;
+    @NotNull
+    private VehicleClass vehicleClass;
+    private VehicleOwner vehicleOwner;
 
     public Vehicle() {
     }
 
-    public Vehicle(String stateCode, String numberPrefix, String number, String make, String color) {
+    public Vehicle(String stateCode, String numberPrefix, String number,
+                   String make, String color, VehicleClass vehicleClass) {
         this.stateCode = stateCode;
         this.numberPrefix = numberPrefix;
         this.number = number;
         this.make = make;
         this.color = color;
+        this.vehicleClass = vehicleClass;
     }
 
-    public String getLicencePlateString() {
+    public Vehicle(String stateCode, String numberPrefix, String number,
+                   String make, String color, VehicleClass vehicleClass,
+                   VehicleOwner vehicleOwner) {
+        this.stateCode = stateCode;
+        this.numberPrefix = numberPrefix;
+        this.number = number;
+        this.make = make;
+        this.color = color;
+        this.vehicleClass = vehicleClass;
+        this.vehicleOwner = vehicleOwner;
+    }
+
+    public String getNumberPlateString() {
         return new StringBuilder(stateCode)
                 .append(" - ")
                 .append(numberPrefix)
@@ -51,10 +67,10 @@ public class Vehicle extends SugarRecord implements Serializable {
     }
 
     public static Collection<Vehicle> findByNumber(String number) {
-        return find(Vehicle.class, "number like ?", new String[]{"%" + number});
+        return find(Vehicle.class, "number like ?", new String[]{"%" + number + "%"});
     }
 
-    public void addOffence(VehicleOffence offence) {
+    /*public void addOffence(VehicleOffence offence) {
         if (getId() != null) {
             offence.setVehicle(this);
             offence.save();
@@ -66,18 +82,7 @@ public class Vehicle extends SugarRecord implements Serializable {
             return SugarRecord.find(VehicleOffence.class, "vehicle = ?", new String[]{getId().toString()});
         }
         return null;
-    }
-
-    @Override
-    public String toString() {
-        return "Vehicle{" +
-                "stateCode='" + stateCode + '\'' +
-                ", numberPrefix='" + numberPrefix + '\'' +
-                ", number='" + number + '\'' +
-                ", make='" + make + '\'' +
-                ", color='" + color + '\'' +
-                '}';
-    }
+    }*/
 
     public String getStateCode() {
         return stateCode;
@@ -119,5 +124,32 @@ public class Vehicle extends SugarRecord implements Serializable {
         this.color = color;
     }
 
+    public VehicleClass getVehicleClass() {
+        return vehicleClass;
+    }
 
+    public void setVehicleClass(VehicleClass vehicleClass) {
+        this.vehicleClass = vehicleClass;
+    }
+
+    public VehicleOwner getVehicleOwner() {
+        return vehicleOwner;
+    }
+
+    public void setVehicleOwner(VehicleOwner vehicleOwner) {
+        this.vehicleOwner = vehicleOwner;
+    }
+
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "stateCode='" + stateCode + '\'' +
+                ", numberPrefix='" + numberPrefix + '\'' +
+                ", number='" + number + '\'' +
+                ", make='" + make + '\'' +
+                ", color='" + color + '\'' +
+                ", vehicleClass=" + vehicleClass +
+                ", vehicleOwner=" + vehicleOwner +
+                '}';
+    }
 }

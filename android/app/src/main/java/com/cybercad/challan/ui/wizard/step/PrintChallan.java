@@ -10,11 +10,11 @@ import android.widget.ListView;
 import java.util.Date;
 
 import com.cybercad.challan.R;
-import com.cybercad.challan.domain.offence.OffenceType;
+import com.cybercad.challan.domain.dmv.offence.OffenceType;
 import com.cybercad.challan.service.print.BluetoothPrinter;
 import com.cybercad.challan.service.print.BluetoothPrinterImpl;
 import com.cybercad.challan.ui.adapter.PrintOffenceTypeAdapter;
-import com.cybercad.challan.ui.wizard.IssueChallanWizardLayout;
+import com.cybercad.challan.ui.wizard.layout.IssueChallanWizardLayout;
 
 import org.codepond.wizardroid.WizardStep;
 import org.codepond.wizardroid.infrastructure.Bus;

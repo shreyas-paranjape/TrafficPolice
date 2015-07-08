@@ -15,11 +15,10 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Locale;
 
-public class LicenseeAdapter extends ArrayAdapter<Licensee> {
+public class LicenceAdapter extends ArrayAdapter<Licence> {
 
-
-    public LicenseeAdapter(Context context, List<Licensee> licensees) {
-        super(context, R.layout.item_licensee, licensees);
+    public LicenceAdapter(Context context, List<Licence> licences) {
+        super(context, R.layout.item_licensee, licences);
     }
 
     @Override
@@ -32,9 +31,10 @@ public class LicenseeAdapter extends ArrayAdapter<Licensee> {
         return convertView;
     }
 
-    private void setFields(View row, Licensee current) {
-        setName(row, current.getPersonalDetails());
-        setBirthDate(row, current.getPersonalDetails());
+    private void setFields(View row, Licence current) {
+        setName(row, current.getLicensee().getPersonalDetails());
+        setBirthDate(row, current.getLicensee().getPersonalDetails());
+        setLicenceNumber(row, current);
     }
 
     private void setName(View row, PersonalDetails current) {
@@ -47,5 +47,7 @@ public class LicenseeAdapter extends ArrayAdapter<Licensee> {
         SystemUtil.setTextViewText(row, R.id.licensee_bdate, formattedBirthDate);
     }
 
+    private void setLicenceNumber(View row, Licence current) {
+        SystemUtil.setTextViewText(row, R.id.licensee_ls_no, current.getLicenceNumber());
+    }
 }
-

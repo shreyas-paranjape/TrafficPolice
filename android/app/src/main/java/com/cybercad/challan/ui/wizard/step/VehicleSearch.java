@@ -10,9 +10,10 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 
 import com.cybercad.challan.R;
-import com.cybercad.challan.domain.Vehicle;
+import com.cybercad.challan.domain.dmv.vehicle.Vehicle;
+import com.cybercad.challan.service.cache.ObjectCache;
 import com.cybercad.challan.ui.adapter.VehicleAdapter;
-import com.cybercad.challan.ui.wizard.IssueChallanWizardLayout;
+import com.cybercad.challan.ui.wizard.layout.IssueChallanWizardLayout;
 
 import org.codepond.wizardroid.WizardStep;
 import org.codepond.wizardroid.infrastructure.Bus;
@@ -58,10 +59,18 @@ public class VehicleSearch extends WizardStep {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Map<String, Serializable> payload = new HashMap<String, Serializable>();
+                Map<String, Object> payload = new HashMap<>();
                 payload.put("vehicle", vehicleAdapter.getItem(position));
+                ObjectCache.put(payload);
                 notifyCompleted();
-                Bus.getInstance().post(new IssueChallanWizardLayout.WizardEvent(payload, IssueChallanWizardLayout.WizardEvent.Type.NEXT));
+                try {
+                    Bus.getInstance().post(new IssueChallanWizardLayout.WizardEvent(
+                            null, IssueChallanWizardLayout.WizardEvent.Type.NEXT));
+                } catch (Exception e) {
+                    if (getActivity() != null) {
+                        getActivity().finish();
+                    }
+                }
             }
         });
         searchButton.setOnClickListener(new View.OnClickListener() {

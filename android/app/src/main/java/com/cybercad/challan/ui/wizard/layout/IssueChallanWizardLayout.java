@@ -1,4 +1,4 @@
-package com.cybercad.challan.ui.wizard;
+package com.cybercad.challan.ui.wizard.layout;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -8,12 +8,10 @@ import android.view.ViewGroup;
 
 import com.cybercad.challan.R;
 import com.cybercad.challan.ui.wizard.step.AddOffence;
+import com.cybercad.challan.ui.wizard.step.ConfirmOffences;
 import com.cybercad.challan.ui.wizard.step.LicenceSearch;
-import com.cybercad.challan.ui.wizard.step.PrintChallan;
 import com.cybercad.challan.ui.wizard.step.VehicleLicenceInfo;
 import com.cybercad.challan.ui.wizard.step.VehicleSearch;
-import com.google.common.cache.Cache;
-import com.google.common.cache.CacheBuilder;
 
 import org.codepond.wizardroid.WizardFlow;
 import org.codepond.wizardroid.WizardFragment;
@@ -23,7 +21,6 @@ import org.codepond.wizardroid.persistence.ContextManager;
 
 import java.io.Serializable;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
 
 public class IssueChallanWizardLayout extends WizardFragment implements Subscriber {
 
@@ -37,12 +34,6 @@ public class IssueChallanWizardLayout extends WizardFragment implements Subscrib
         super(contextManager);
     }
 
-    private static final Cache<String, Serializable> cache = CacheBuilder.newBuilder()
-            .initialCapacity(10)
-            .maximumSize(1000)
-            .expireAfterWrite(2, TimeUnit.MINUTES)
-            .build();
-
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View wizardLayout = inflater.inflate(R.layout.wizard_layout, container, false);
         return wizardLayout;
@@ -53,10 +44,6 @@ public class IssueChallanWizardLayout extends WizardFragment implements Subscrib
 
     public void onWizardComplete() {
         super.onWizardComplete();
-        if (cache != null) {
-            cache.invalidateAll();
-            cache.cleanUp();
-        }
         Activity parent = getActivity();
         if (parent != null) {
             parent.finish();
@@ -67,11 +54,12 @@ public class IssueChallanWizardLayout extends WizardFragment implements Subscrib
     public WizardFlow onSetup() {
         Bus.getInstance().register(this, WizardEvent.class);
         return new WizardFlow.Builder()
-                .addStep(VehicleSearch.class)
-                .addStep(LicenceSearch.class)
+                .addStep(VehicleSearch.class, true)
+                .addStep(LicenceSearch.class, true)
                 .addStep(VehicleLicenceInfo.class)
-                .addStep(AddOffence.class)
-                .addStep(PrintChallan.class)
+                .addStep(AddOffence.class, true)
+                .addStep(ConfirmOffences.class)
+                        //.addStep(PrintChallan.class)
                 .create();
     }
 
@@ -79,9 +67,6 @@ public class IssueChallanWizardLayout extends WizardFragment implements Subscrib
     public void receive(Object o) {
         if (o instanceof WizardEvent) {
             WizardEvent event = (WizardEvent) o;
-            if (event.getPayload() != null) {
-                cache.putAll(event.getPayload());
-            }
             switch (event.getType()) {
                 case NEXT:
                     wizard.goNext();
@@ -93,9 +78,6 @@ public class IssueChallanWizardLayout extends WizardFragment implements Subscrib
         }
     }
 
-    public static Serializable get(String key) {
-        return cache.getIfPresent(key);
-    }
 
     public static class WizardEvent {
         private final Map<String, Serializable> payload;
