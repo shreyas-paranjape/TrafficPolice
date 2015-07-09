@@ -13,12 +13,14 @@
     <string name="licence_info_header">Licence Information</string>
     <string name="print_header">Print</string>
 
-    <string name="vehicle_number_hint">Enter vehicle number</string>
+    <string name="vehicle_number_hint">vehicle number</string>
+    <string name="no_vehicles">No matching vehicles</string>
+    <string name="no_licences">No matching licences</string>
     <string name="Search">Search</string>
     <string name="personal_details">Personal details</string>
     <string name="licence_details">Licence details</string>
     <string name="previous_offences">Previous offences</string>
-    <string name="licence_number_hint">Enter licence number</string>
+    <string name="licence_number_hint">licence number</string>
     <string name="licensee_image">Licensee image</string>
     <string name="label_add_offence">Add offence</string>
 
@@ -27,6 +29,8 @@
     <string name="action_finish">Finish</string>
     <string name="action_print">Print</string>
     <string name="action_confirm">Confirm</string>
+    <string name="action_done">Done</string>
 
+    <string name="paid">Paid</string>
 
 </resources>

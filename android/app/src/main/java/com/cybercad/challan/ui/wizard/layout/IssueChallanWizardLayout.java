@@ -10,6 +10,7 @@ import com.cybercad.challan.R;
 import com.cybercad.challan.ui.wizard.step.AddOffence;
 import com.cybercad.challan.ui.wizard.step.ConfirmOffences;
 import com.cybercad.challan.ui.wizard.step.LicenceSearch;
+import com.cybercad.challan.ui.wizard.step.PrintChallan;
 import com.cybercad.challan.ui.wizard.step.VehicleLicenceInfo;
 import com.cybercad.challan.ui.wizard.step.VehicleSearch;
 
@@ -50,6 +51,7 @@ public class IssueChallanWizardLayout extends WizardFragment implements Subscrib
         }
     }
 
+
     @Override
     public WizardFlow onSetup() {
         Bus.getInstance().register(this, WizardEvent.class);
@@ -59,7 +61,7 @@ public class IssueChallanWizardLayout extends WizardFragment implements Subscrib
                 .addStep(VehicleLicenceInfo.class)
                 .addStep(AddOffence.class, true)
                 .addStep(ConfirmOffences.class)
-                        //.addStep(PrintChallan.class)
+                .addStep(PrintChallan.class)
                 .create();
     }
 

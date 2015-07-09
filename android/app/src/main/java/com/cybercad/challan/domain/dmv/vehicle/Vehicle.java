@@ -66,8 +66,9 @@ public class Vehicle extends SugarRecord implements Serializable {
         return SugarRecord.listAll(Vehicle.class);
     }
 
-    public static Collection<Vehicle> findByNumber(String number) {
-        return find(Vehicle.class, "number like ?", new String[]{"%" + number + "%"});
+    public static Collection<Vehicle> findByNumber(String statecode, String number) {
+        return find(Vehicle.class, "state_code like ? and number like ?",
+                new String[]{"%" + statecode, "%" + number + "%"});
     }
 
     /*public void addOffence(VehicleOffence offence) {

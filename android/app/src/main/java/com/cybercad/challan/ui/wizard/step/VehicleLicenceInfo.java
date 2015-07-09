@@ -1,12 +1,14 @@
 package com.cybercad.challan.ui.wizard.step;
 
-import android.app.Activity;
+import android.content.res.AssetManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -23,6 +25,7 @@ import com.cybercad.challan.ui.wizard.layout.IssueChallanWizardLayout;
 import org.codepond.wizardroid.WizardStep;
 import org.codepond.wizardroid.infrastructure.Bus;
 
+import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 
@@ -38,6 +41,7 @@ public class VehicleLicenceInfo extends WizardStep {
     private TextView vehicleColor;
     private TextView vehicleMake;
     private TextView vehicleNumber;
+    private ImageView picture;
 
 
     @Override
@@ -80,6 +84,8 @@ public class VehicleLicenceInfo extends WizardStep {
         vehicleColor = (TextView) v.findViewById(R.id.vehicle_color);
         vehicleMake = (TextView) v.findViewById(R.id.vehicle_make);
         vehicleNumber = (TextView) v.findViewById(R.id.vehicle_number);
+        picture = (ImageView) v.findViewById(R.id.licensee_image);
+        picture.setImageBitmap(getBitmapFromAssets("pic.png"));
 
         Button nextButton = (Button) v.findViewById(R.id.wizard_next_button);
         nextButton.setOnClickListener(new View.OnClickListener() {
@@ -90,12 +96,27 @@ public class VehicleLicenceInfo extends WizardStep {
                             new IssueChallanWizardLayout.WizardEvent(
                                     null, IssueChallanWizardLayout.WizardEvent.Type.NEXT));
                 } catch (Exception e) {
+                    if (getActivity() != null) {
+                        getActivity().finish();
+                    }
                 }
             }
         });
         return v;
     }
 
+    public Bitmap getBitmapFromAssets(String fileName) {
+        try {
+            AssetManager assetManager = getActivity().getAssets();
+
+            InputStream istr = assetManager.open(fileName);
+            Bitmap bitmap = BitmapFactory.decodeStream(istr);
+
+            return bitmap;
+        } catch (Exception e) {
+            return null;
+        }
+    }
 
     @Override
     public void onExit(int exitCode) {

@@ -4,8 +4,10 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.view.ActionMode;
 
 import com.cybercad.challan.R;
+import com.cybercad.challan.service.cache.ObjectCache;
 
 public class IssueChallanActivity extends FragmentActivity {
     @Override
@@ -17,7 +19,6 @@ public class IssueChallanActivity extends FragmentActivity {
     @Override
     public void onBackPressed() {
         new AlertDialog.Builder(this)
-                .setIcon(android.R.drawable.ic_dialog_alert)
                 .setTitle("Issue challan")
                 .setMessage("Are you sure you want to exit?")
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
@@ -29,6 +30,11 @@ public class IssueChallanActivity extends FragmentActivity {
                 })
                 .setNegativeButton("No", null)
                 .show();
-        //finish();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ObjectCache.clear();
     }
 }

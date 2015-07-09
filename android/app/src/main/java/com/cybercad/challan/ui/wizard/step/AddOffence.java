@@ -55,12 +55,19 @@ public class AddOffence extends WizardStep {
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Map<String, Object> payload = new HashMap<>();
+                Log.i(TAG, "" + CollectionUtil.toString(offencesSelected));
+                payload.put("offences", ImmutableList.copyOf(offencesSelected));
+                ObjectCache.put(payload);
                 notifyCompleted();
                 try {
                     Bus.getInstance().post(
                             new IssueChallanWizardLayout.WizardEvent(
                                     null, IssueChallanWizardLayout.WizardEvent.Type.NEXT));
                 } catch (Exception e) {
+                    if (getActivity() != null) {
+                        getActivity().finish();
+                    }
                 }
             }
         });
@@ -70,10 +77,10 @@ public class AddOffence extends WizardStep {
     private void initGrid(View v) {
         offencesContainer = (TabHost) v.findViewById(R.id.offencesContainer);
         offencesContainer.setup();
-        offencesContainer.addTab(offencesContainer.newTabSpec("Vehicle_Offences")
-                .setIndicator("Vehicle Offences").setContent(R.id.tabVehicleOffence));
         offencesContainer.addTab(offencesContainer.newTabSpec("Licence_Offences")
                 .setIndicator("Licence Offences").setContent(R.id.tabLicenceOffence));
+        offencesContainer.addTab(offencesContainer.newTabSpec("Vehicle_Offences")
+                .setIndicator("Vehicle Offences").setContent(R.id.tabVehicleOffence));
 
         List<OffenceType> vehicleOffences = OffenceType.getVehicleOffences();
         List<OffenceType> licenceOffences = OffenceType.getLicenceOffences();
@@ -95,7 +102,7 @@ public class AddOffence extends WizardStep {
                         } else {
                             offencesSelected.remove(offenceType);
                         }
-                        Log.i(TAG, "" + CollectionUtil.toString(offencesSelected));
+                        Log.i(TAG, "Added offence. All : " + CollectionUtil.toString(offencesSelected));
                     }
                 });
                 return button;
@@ -135,34 +142,6 @@ public class AddOffence extends WizardStep {
     public void onExit(int exitCode) {
         switch (exitCode) {
             case WizardStep.EXIT_NEXT:
-
-                /*for (int i = 0; i < vehicleOffenceTypeAdapter.getCount(); i++) {
-                    CompoundButton offenceButton = (CompoundButton) vehicleOffencesGrid.getChildAt(i);
-                    try {
-                        if (offenceButton.isChecked()) {
-                            offenceButton.setChecked(false);
-                            offencesSelected.add(vehicleOffenceTypeAdapter.getItem(i));
-                        }
-                    } catch (Exception e) {
-                        Log.i(TAG, e.getMessage());
-                    }
-                }
-                for (int i = 0; i < licenceOffenceTypeAdapter.getCount(); i++) {
-                    CompoundButton offenceButton = (CompoundButton) licenceOffencesGrid.getChildAt(i);
-                    try {
-                        if (offenceButton.isChecked()) {
-                            offenceButton.setChecked(false);
-                            offencesSelected.add(licenceOffenceTypeAdapter.getItem(i));
-                        }
-                    } catch (Exception e) {
-                        Log.i(TAG, e.getMessage());
-                    }
-                }*/
-                Map<String, Object> payload = new HashMap<>();
-                Log.i(TAG, "" + CollectionUtil.toString(offencesSelected));
-                payload.put("offences", ImmutableList.copyOf(offencesSelected));
-                ObjectCache.put(payload);
-                //offencesSelected.clear();
                 break;
             case WizardStep.EXIT_PREVIOUS:
                 break;

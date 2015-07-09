@@ -52,9 +52,9 @@ public class LicenceSearch extends WizardStep {
     private View initView(LayoutInflater inflater, ViewGroup container) {
         final View v = inflater.inflate(R.layout.step_licence_search, container, false);
         listView = (ListView) v.findViewById(R.id.licensees);
+        listView.setEmptyView(v.findViewById(R.id.licences_empty));
         searchButton = (ImageButton) v.findViewById(R.id.search_licensees);
         licenceNumberQuery = (EditText) v.findViewById(R.id.licensee_query);
-
         return v;
     }
 

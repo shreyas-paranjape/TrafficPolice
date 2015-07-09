@@ -23,4 +23,9 @@ public class ObjectCache {
         return cache.getIfPresent(key);
     }
 
+    public static void clear() {
+        cache.invalidateAll();
+        cache.cleanUp();
+    }
+
 }

@@ -8,15 +8,14 @@ import android.widget.ArrayAdapter;
 import com.cybercad.challan.R;
 import com.cybercad.challan.domain.dmv.offence.LicenceOffence;
 import com.cybercad.challan.domain.dmv.offence.OffenceType;
+import com.cybercad.challan.domain.dmv.offence.VehicleOffence;
 import com.cybercad.challan.util.SystemUtil;
 
-import java.text.SimpleDateFormat;
 import java.util.List;
-import java.util.Locale;
 
-public class AddedOffenceAdapter extends ArrayAdapter<LicenceOffence> {
+public class AddedVehicleOffence extends ArrayAdapter<VehicleOffence> {
 
-    public AddedOffenceAdapter(Activity context, List<LicenceOffence> licenceOffences) {
+    public AddedVehicleOffence(Activity context, List<VehicleOffence> licenceOffences) {
         super(context, R.layout.item_added_offence, licenceOffences);
     }
 
@@ -30,7 +29,7 @@ public class AddedOffenceAdapter extends ArrayAdapter<LicenceOffence> {
         return convertView;
     }
 
-    private void setFields(View row, LicenceOffence current) {
+    private void setFields(View row, VehicleOffence current) {
         setDescription(row, current.getOffenceType());
         setRepetetion(row, current);
         setPenalty(row, current);
@@ -41,11 +40,11 @@ public class AddedOffenceAdapter extends ArrayAdapter<LicenceOffence> {
         SystemUtil.setTextViewText(row, R.id.off_desc, current.getDescription());
     }
 
-    private void setRepetetion(View row, LicenceOffence current) {
+    private void setRepetetion(View row, VehicleOffence current) {
         SystemUtil.setTextViewText(row, R.id.off_repetetion, "" + current.getRepetetion());
     }
 
-    private void setPenalty(View row, LicenceOffence current) {
+    private void setPenalty(View row, VehicleOffence current) {
         SystemUtil.setTextViewText(row, R.id.off_penalty, "" + current.getPenalty());
     }
 }

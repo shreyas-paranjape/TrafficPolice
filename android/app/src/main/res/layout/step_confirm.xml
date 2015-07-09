@@ -2,23 +2,48 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
 
 
     <ListView
-        android:id="@+id/lv_confirm_offences"
+        android:id="@+id/lv_confirm_lic_offences"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"></ListView>
+
+    <ListView
+        android:id="@+id/lv_confirm_veh_offences"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0">
 
     </ListView>
 
-    <Button
-        android:id="@+id/btn_confirm_nxt"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/tv_confirm_total"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:gravity="right"
+        android:paddingRight="55dp"
+        android:paddingTop="20dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_gravity="bottom"
-        android:layout_weight="1"
-        android:text="@string/action_confirm" />
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/btn_confirm_nxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="@string/action_confirm" />
+    </RelativeLayout>
+
 
 </LinearLayout>

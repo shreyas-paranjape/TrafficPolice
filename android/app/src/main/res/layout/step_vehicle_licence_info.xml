@@ -27,11 +27,11 @@
         android:paddingTop="@dimen/activity_vertical_margin">
 
         <ImageView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:contentDescription="@string/licensee_image"
-            android:src="@mipmap/ic_account_box" />
+            android:id="@+id/licensee_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_weight="0"
+            android:contentDescription="@string/licensee_image" />
 
         <LinearLayout
             android:layout_width="0dp"

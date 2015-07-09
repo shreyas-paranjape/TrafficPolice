@@ -3,6 +3,7 @@ package com.cybercad.challan.domain.dmv.offence;
 import com.cybercad.challan.domain.dmv.licence.Licence;
 import com.cybercad.challan.domain.dmv.vehicle.Vehicle;
 import com.orm.SugarRecord;
+import com.orm.dsl.Ignore;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -16,6 +17,8 @@ public class VehicleOffence extends SugarRecord implements Serializable {
     private Date issueDate;
     private OffenceType offenceType;
     private Vehicle vehicle;
+    @Ignore
+    private Integer repetetion = new Integer(1);
 
     public VehicleOffence() {
     }
@@ -24,6 +27,7 @@ public class VehicleOffence extends SugarRecord implements Serializable {
         this.vehicle = vehicle;
         this.issueDate = issueDate;
         this.offenceType = offenceType;
+        calculateRepetetion();
     }
 
     public static List<VehicleOffence> getAll() {
@@ -38,8 +42,16 @@ public class VehicleOffence extends SugarRecord implements Serializable {
         }
     }
 
-    public double getPenalty(int repetetion) {
+    public double getPenalty() {
         return repetetion * offenceType.getPenalty();
+    }
+
+    public VehicleOffence calculateRepetetion() {
+        List<VehicleOffence> sameOffenceType = SugarRecord.find(VehicleOffence.class, "offence_type = ?", new String[]{offenceType.getId().toString()});
+        if (sameOffenceType != null) {
+            repetetion = sameOffenceType.size() + 1;
+        }
+        return this;
     }
 
     public Date getIssueDate() {
@@ -66,12 +78,22 @@ public class VehicleOffence extends SugarRecord implements Serializable {
         this.vehicle = vehicle;
     }
 
+
+    public Integer getRepetetion() {
+        return repetetion;
+    }
+
+    public void setRepetetion(Integer repetetion) {
+        this.repetetion = repetetion;
+    }
+
     @Override
     public String toString() {
         return "VehicleOffence{" +
                 "issueDate=" + issueDate +
                 ", offenceType=" + offenceType +
                 ", vehicle=" + vehicle +
+                ", repetetion=" + repetetion +
                 '}';
     }
 }

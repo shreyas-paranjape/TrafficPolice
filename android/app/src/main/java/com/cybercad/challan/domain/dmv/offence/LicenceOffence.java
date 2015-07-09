@@ -2,6 +2,7 @@ package com.cybercad.challan.domain.dmv.offence;
 
 import com.cybercad.challan.domain.dmv.licence.Licence;
 import com.cybercad.challan.domain.dmv.people.Licensee;
+import com.cybercad.challan.util.CollectionUtil;
 import com.orm.SugarRecord;
 import com.orm.dsl.Ignore;
 import com.orm.dsl.NotNull;
@@ -22,7 +23,7 @@ public class LicenceOffence extends SugarRecord implements Serializable {
     @NotNull
     private OffenceType offenceType;
     @Ignore
-    private Integer repetetion;
+    private Integer repetetion = new Integer(1);
 
 
     public LicenceOffence() {
@@ -32,6 +33,7 @@ public class LicenceOffence extends SugarRecord implements Serializable {
         this.licence = licence;
         this.issueDate = issueDate;
         this.offenceType = offenceType;
+        calculateRepetetion();
     }
 
     public static List<LicenceOffence> getAll() {
@@ -51,11 +53,9 @@ public class LicenceOffence extends SugarRecord implements Serializable {
     }
 
     public LicenceOffence calculateRepetetion() {
-        List<LicenceOffence> sameOffenceType = SugarRecord.find(LicenceOffence.class, "offence_type = ?", new String[]{});
+        List<LicenceOffence> sameOffenceType = SugarRecord.find(LicenceOffence.class, "offence_type = ?", new String[]{offenceType.getId().toString()});
         if (sameOffenceType != null) {
-            repetetion = sameOffenceType.size();
-        } else {
-            repetetion = 1;
+            repetetion = sameOffenceType.size() + 1;
         }
         return this;
     }
@@ -94,6 +94,7 @@ public class LicenceOffence extends SugarRecord implements Serializable {
                 "licence=" + licence +
                 ", issueDate=" + issueDate +
                 ", offenceType=" + offenceType +
+                ", repetetion=" + getRepetetion() +
                 '}';
     }
 }
