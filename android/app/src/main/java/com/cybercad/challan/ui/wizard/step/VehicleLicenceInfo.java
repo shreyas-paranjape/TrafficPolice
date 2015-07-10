@@ -4,6 +4,7 @@ import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 
 import com.cybercad.challan.R;
 import com.cybercad.challan.domain.dmv.licence.Licence;
+import com.cybercad.challan.domain.dmv.licence.LicenceVehicleClass;
 import com.cybercad.challan.domain.dmv.offence.LicenceOffence;
 import com.cybercad.challan.domain.dmv.offence.VehicleOffence;
 import com.cybercad.challan.domain.dmv.vehicle.Vehicle;
@@ -27,6 +29,8 @@ import org.codepond.wizardroid.infrastructure.Bus;
 
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 public class VehicleLicenceInfo extends WizardStep {
@@ -37,6 +41,7 @@ public class VehicleLicenceInfo extends WizardStep {
     private TextView licenseeName;
     private TextView licenseeBirthDate;
     private TextView licenceNumber;
+    private TextView licenceVehicleClass;
     private ListView vehicleOffencesView;
     private TextView vehicleColor;
     private TextView vehicleMake;
@@ -63,6 +68,12 @@ public class VehicleLicenceInfo extends WizardStep {
             licenseeBirthDate.setText(formattedBirthDate);
             OffenceAdapter offenceAdapter = new OffenceAdapter(getActivity(), LicenceOffence.getForLicence(licence));
             licenseeOffencesView.setAdapter(offenceAdapter);
+            List<LicenceVehicleClass> licenceVehicleClasses = LicenceVehicleClass.getForLicence(licence);
+            List<String> vehClasDescps = new ArrayList<>();
+            for (LicenceVehicleClass licVehClaz : licenceVehicleClasses) {
+                vehClasDescps.add(licVehClaz.getVehicleClass().getDescription());
+            }
+            licenceVehicleClass.setText(TextUtils.join(",", vehClasDescps));
         }
         Vehicle vehicle = (Vehicle) ObjectCache.get("vehicle");
         if (vehicle != null) {
@@ -80,6 +91,7 @@ public class VehicleLicenceInfo extends WizardStep {
         licenceNumber = (TextView) v.findViewById(R.id.licensee_ls_no);
         licenseeBirthDate = (TextView) v.findViewById(R.id.licensee_bdate);
         licenseeName = (TextView) v.findViewById(R.id.licensee_name);
+        licenceVehicleClass = (TextView) v.findViewById(R.id.licensee_veh_class);
         vehicleOffencesView = (ListView) v.findViewById(R.id.vehicle_Offences);
         vehicleColor = (TextView) v.findViewById(R.id.vehicle_color);
         vehicleMake = (TextView) v.findViewById(R.id.vehicle_make);

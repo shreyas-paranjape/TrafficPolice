@@ -30,12 +30,21 @@
 
     </LinearLayout>
 
+
     <Button
         android:id="@+id/btn_print_nxt"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_weight="1"
+        android:layout_weight="0"
         android:text="@string/action_print" />
+
+    <Button
+        android:id="@+id/btn_print_exit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_weight="0"
+        android:text="@string/action_done" />
 
 </LinearLayout>

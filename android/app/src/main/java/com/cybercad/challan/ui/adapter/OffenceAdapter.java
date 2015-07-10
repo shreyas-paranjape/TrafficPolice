@@ -30,6 +30,11 @@ public class OffenceAdapter extends ArrayAdapter<LicenceOffence> {
         return convertView;
     }
 
+    @Override
+    public boolean isEnabled(int position) {
+        return false;
+    }
+
     private void setFields(View row, LicenceOffence current) {
         setDate(row, current);
         setDescription(row, current.getOffenceType());

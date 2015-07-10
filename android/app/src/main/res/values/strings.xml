@@ -29,7 +29,7 @@
     <string name="action_finish">Finish</string>
     <string name="action_print">Print</string>
     <string name="action_confirm">Confirm</string>
-    <string name="action_done">Done</string>
+    <string name="action_done">Exit</string>
 
     <string name="paid">Paid</string>
 

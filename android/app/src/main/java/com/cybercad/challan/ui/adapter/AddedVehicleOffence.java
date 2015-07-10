@@ -35,6 +35,11 @@ public class AddedVehicleOffence extends ArrayAdapter<VehicleOffence> {
         setPenalty(row, current);
     }
 
+    @Override
+    public boolean isEnabled(int position) {
+        return false;
+    }
+
 
     private void setDescription(View row, OffenceType current) {
         SystemUtil.setTextViewText(row, R.id.off_desc, current.getDescription());

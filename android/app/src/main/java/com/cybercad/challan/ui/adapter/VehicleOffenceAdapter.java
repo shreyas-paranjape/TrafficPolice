@@ -14,9 +14,6 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Locale;
 
-/**
- * Created by shreyas on 6/7/15.
- */
 public class VehicleOffenceAdapter extends ArrayAdapter<VehicleOffence> {
 
     public VehicleOffenceAdapter(Activity context, List<VehicleOffence> offences) {
@@ -31,6 +28,11 @@ public class VehicleOffenceAdapter extends ArrayAdapter<VehicleOffence> {
         }
         setFields(convertView, getItem(position));
         return convertView;
+    }
+
+    @Override
+    public boolean isEnabled(int position) {
+        return false;
     }
 
     private void setFields(View row, VehicleOffence current) {

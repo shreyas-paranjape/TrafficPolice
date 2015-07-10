@@ -5,6 +5,7 @@ import com.orm.dsl.Unique;
 
 import java.io.Serializable;
 import java.util.Collection;
+import java.util.Objects;
 
 public class VehicleClass extends SugarRecord implements Serializable {
 
@@ -20,6 +21,15 @@ public class VehicleClass extends SugarRecord implements Serializable {
     public VehicleClass(String code, String description) {
         this.code = code;
         this.description = description;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof VehicleClass) {
+            VehicleClass other = (VehicleClass) o;
+            return Objects.equals(code, other.getCode());
+        }
+        return false;
     }
 
     public static Collection<VehicleClass> searchByCode(String code) {

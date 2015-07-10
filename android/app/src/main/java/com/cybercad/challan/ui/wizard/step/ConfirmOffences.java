@@ -1,6 +1,7 @@
 package com.cybercad.challan.ui.wizard.step;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,15 +12,18 @@ import android.widget.TextView;
 
 import com.cybercad.challan.R;
 import com.cybercad.challan.domain.dmv.licence.Licence;
+import com.cybercad.challan.domain.dmv.licence.LicenceVehicleClass;
 import com.cybercad.challan.domain.dmv.offence.LicenceOffence;
 import com.cybercad.challan.domain.dmv.offence.OffenceType;
 import com.cybercad.challan.domain.dmv.offence.VehicleOffence;
 import com.cybercad.challan.domain.dmv.vehicle.Vehicle;
+import com.cybercad.challan.domain.dmv.vehicle.VehicleClass;
 import com.cybercad.challan.service.cache.ObjectCache;
 import com.cybercad.challan.ui.adapter.AddedOffenceAdapter;
 import com.cybercad.challan.ui.adapter.AddedVehicleOffence;
 import com.cybercad.challan.ui.adapter.VehicleOffenceAdapter;
 import com.cybercad.challan.ui.wizard.layout.IssueChallanWizardLayout;
+import com.cybercad.challan.util.CollectionUtil;
 import com.google.common.collect.ImmutableList;
 
 import org.codepond.wizardroid.WizardStep;
@@ -51,10 +55,23 @@ public class ConfirmOffences extends WizardStep {
         if (licence != null) {
             List<LicenceOffence> prevLicOffence = LicenceOffence.getForLicence(licence);
         }
+        if (licence.getExpiryDate().before(new Date())) {
+            licenceOffences.add(new LicenceOffence(licence, new Date(), OffenceType.searchByCode("LE")));
+        }
         Vehicle vehicle = (Vehicle) ObjectCache.get("vehicle");
         if (vehicle != null) {
             List<VehicleOffence> prevVehicleOffence = VehicleOffence.getForVehicle(vehicle);
         }
+        List<LicenceVehicleClass> licenceVehicleClasses = LicenceVehicleClass.getForLicence(licence);
+        List<VehicleClass> vehClasses = new ArrayList<>();
+        for (LicenceVehicleClass licVehClaz : licenceVehicleClasses) {
+            vehClasses.add(licVehClaz.getVehicleClass());
+        }
+        Log.i(TAG, "Vehicle Class for licence: " + CollectionUtil.toString(vehClasses));
+        if (!vehClasses.contains(vehicle.getVehicleClass())) {
+            licenceOffences.add(new LicenceOffence(licence, new Date(), OffenceType.searchByCode("WC")));
+        }
+
         ImmutableList<OffenceType> offences = (ImmutableList<OffenceType>) ObjectCache.get("offences");
         if (offences != null) {
             for (OffenceType offen : offences) {

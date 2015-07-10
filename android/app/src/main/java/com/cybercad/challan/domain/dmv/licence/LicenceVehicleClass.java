@@ -37,6 +37,7 @@ public class LicenceVehicleClass extends SugarRecord implements Serializable {
         }
     }
 
+
     public VehicleClass getVehicleClass() {
         return vehicleClass;
     }

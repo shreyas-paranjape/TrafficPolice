@@ -4,6 +4,7 @@ import android.app.Application;
 import android.util.Log;
 
 import com.cybercad.challan.domain.dmv.licence.Licence;
+import com.cybercad.challan.domain.dmv.licence.LicenceVehicleClass;
 import com.cybercad.challan.domain.dmv.offence.LicenceOffence;
 import com.cybercad.challan.domain.dmv.offence.OffenceType;
 import com.cybercad.challan.domain.dmv.offence.VehicleOffence;
@@ -80,6 +81,11 @@ public class ChallanApp extends Application {
         OffenceType number_plate = new OffenceType("FNB", "Number plate", 1000, "v");
         number_plate.save();
 
+        OffenceType wrong_class = new OffenceType("WC", "Wrong vehicle class", 1000, "a");
+        wrong_class.save();
+
+        OffenceType licence_expired = new OffenceType("LE", "Licence expired", 2000, "a");
+        licence_expired.save();
 
         // PEOPLE
         PersonalDetails shrep = new PersonalDetails("Shreyas", "Mahesh", "Paranjape", new Date(89, 8, 10));
@@ -117,6 +123,16 @@ public class ChallanApp extends Application {
 
         PersonalDetails diksha = new PersonalDetails("Vaibhav", "", "Kharangate", new Date());
         diksha.save();
+
+        // VEHICLE CLASS
+        VehicleClass lmv = new VehicleClass("LMV", "LMV");
+        lmv.save();
+
+        VehicleClass mcwog = new VehicleClass("MCWOG", "MCWOG");
+        mcwog.save();
+
+        VehicleClass mcwg = new VehicleClass("MCWG", "MCWG");
+        mcwg.save();
 
 
         // Licensee
@@ -157,13 +173,22 @@ public class ChallanApp extends Application {
         licensee_diksha.save();
 
         // Licence
-        Licence licence_shrep = new Licence("GA0320110079947", licensee_shrep, new Date(2010, 5, 9), new Date(131, 5, 9));
+        Licence licence_shrep = new Licence("GA0320110079947", licensee_shrep, new Date(110, 5, 9), new Date(131, 5, 9));
         licence_shrep.save();
 
-        Licence licence_shelton = new Licence("GA031110004234", licensee_shelton, new Date(110, 5, 9), new Date(131, 5, 9));
+        LicenceVehicleClass licenceVehicleClass = new LicenceVehicleClass(mcwg, new Date(110, 5, 9), licence_shrep);
+        licenceVehicleClass.save();
+
+        Licence licence_shelton = new Licence("GA031110004234", licensee_shelton, new Date(100, 5, 9), new Date(110, 5, 9));
         licence_shelton.save();
 
-        Licence licence_shawn = new Licence("GA032011005201", licensee_shawn, new Date(110, 5, 9), new Date(131, 02, 11));
+        LicenceVehicleClass licVehClz = new LicenceVehicleClass(lmv, new Date(110, 5, 9), licence_shelton);
+        licVehClz.save();
+
+        LicenceVehicleClass licVehClzz = new LicenceVehicleClass(mcwg, new Date(110, 5, 9), licence_shelton);
+        licVehClzz.save();
+
+        /*Licence licence_shawn = new Licence("GA032011005201", licensee_shawn, new Date(110, 5, 9), new Date(110, 02, 11));
         licence_shawn.save();
 
         Licence licence_prabhav = new Licence("GA0320140000143", licensee_prabhav, new Date(110, 5, 9), new Date(134, 07, 01));
@@ -191,30 +216,21 @@ public class ChallanApp extends Application {
         licence_vaibhav.save();
 
         Licence licence_diksha = new Licence("GA0320130003249", licensee_diksha, new Date(110, 5, 9), new Date(133, 17, 02));
-        licence_diksha.save();
+        licence_diksha.save();*/
 
-        // VEHICLE CLASS
-        VehicleClass lmv = new VehicleClass("LMV", "LMV");
-        lmv.save();
-
-        VehicleClass mcwog = new VehicleClass("MCWOG", "MCWOG");
-        mcwog.save();
-
-        VehicleClass mcwg = new VehicleClass("MCWG", "MCWG");
-        mcwg.save();
 
         // VEHICLE OWNER
         VehicleOwner owner = new VehicleOwner(shrep);
         owner.save();
 
         // VEHICLE
-        Vehicle shrep_fzs_blue = new Vehicle("GA05", "K", "7100", "Yamaha FZ-S", "BLUE", lmv, owner);
+        Vehicle shrep_fzs_blue = new Vehicle("GA05", "K", "7100", "Yamaha FZ-S", "BLUE", mcwg, owner);
         shrep_fzs_blue.save();
 
         Vehicle omni = new Vehicle("GA5", "B", "7326", "MARUTI SUZUKI OMNI", "BLUE", lmv, owner);
         omni.save();
 
-        Vehicle shrep_fzs_red = new Vehicle("GA08", "F", "8133", "Yamaha FZ-S", "RED", lmv, owner);
+        Vehicle shrep_fzs_red = new Vehicle("GA08", "F", "8133", "Yamaha FZ-S", "RED", mcwg, owner);
         shrep_fzs_red.save();
 
         Vehicle liva = new Vehicle("GA07", "C", "2775", "TOYOTA LIVA", "BLUE", lmv, owner);
@@ -252,8 +268,7 @@ public class ChallanApp extends Application {
         VehicleOffence fzs_no_pollution_2 = new VehicleOffence(shrep_fzs_blue, new Date(113, 1, 28), pollution);
         fzs_no_pollution_2.save();
 
-        Log.i(TAG, "Second offence : " + fzs_no_pollution_2);
-
+        Log.i(TAG, "Vehicle Class for licence: " + CollectionUtil.toString(LicenceVehicleClass.getForLicence(licence_shrep)));
 
         //Log.d(TAG, "Vehicle Offence : " + CollectionUtil.toString(VehicleOffence.getAll()));
         //Log.d(TAG, "Vehicle for Offence : " + CollectionUtil.toString(VehicleOffence.getForVehicle(shrep_fzs_blue)));

@@ -15,14 +15,15 @@ import com.cybercad.challan.domain.dmv.vehicle.Vehicle;
 import com.cybercad.challan.service.cache.ObjectCache;
 import com.cybercad.challan.service.print.BluetoothPrinter;
 import com.cybercad.challan.service.print.BluetoothPrinterImpl;
+import com.cybercad.challan.ui.wizard.layout.IssueChallanWizardLayout;
 
 import org.codepond.wizardroid.WizardStep;
+import org.codepond.wizardroid.infrastructure.Bus;
 
 import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-import java.util.Random;
 
 public class PrintChallan extends WizardStep {
 
@@ -55,12 +56,11 @@ public class PrintChallan extends WizardStep {
 
     private void initView(View v) {
         Button nextButton = (Button) v.findViewById(R.id.btn_print_nxt);
-        final CheckBox paid_chk = (CheckBox) v.findViewById(R.id.chk_paid);
-        nextButton.setOnClickListener(new View.OnClickListener() {
+        Button exit = (Button) v.findViewById(R.id.btn_print_exit);
+        exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                printer.print(getChallanString(paid_chk.isChecked()));
-               /* try {
+                try {
                     Bus.getInstance().post(
                             new IssueChallanWizardLayout.WizardEvent(
                                     null, IssueChallanWizardLayout.WizardEvent.Type.NEXT));
@@ -68,17 +68,23 @@ public class PrintChallan extends WizardStep {
                     if (getActivity() != null) {
                         getActivity().finish();
                     }
-                }*/
+                }
             }
         });
-
-
+        final CheckBox paid_chk = (CheckBox) v.findViewById(R.id.chk_paid);
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                printer.print(getChallanString(paid_chk.isChecked()));
+            }
+        });
     }
 
     private String getChallanString(boolean isPaid) {
         Vehicle vehicle = (Vehicle) ObjectCache.get("vehicle");
         Licence licence = (Licence) ObjectCache.get("licence");
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat fullFormatter = new SimpleDateFormat("dd/MM/yyyy HH:mm");
         long total = 0;
         StringBuilder printStringBuilder = new StringBuilder();
 
@@ -93,14 +99,16 @@ public class PrintChallan extends WizardStep {
                 .append("\tTraffic violation challan\r\n")
                 .append("-------------------------------------------\r\n")
                 .append("Challan no:")
-                .append("123456789\t")
+                .append("12345\t")
                 .append(" Date: ")
-                .append(formatter.format(new Date()))
+                .append(fullFormatter.format(new Date()))
                 .append(" \r\n")
-                .append("Issued by : Mr. Traffic police\r\n")
+                .append("Issued by : Mr. Nikhil Salkar\r\n")
 
                 .append("Licensee details : \r\n")
-                .append("Name - Shreyas Mahesh Paranjape\r\n")
+                .append("Name - ")
+                .append(licence.getLicensee().getPersonalDetails().getName())
+                .append("\r\n")
 
                 .append("Licence details: \r\n")
                 .append("Number- ")
@@ -142,7 +150,7 @@ public class PrintChallan extends WizardStep {
         }
         printStringBuilder.append("\tTotal : ")
                 .append(total)
-                .append("\r\n");
+                .append("\r\n\r\n\r\n\r\n");
         return printStringBuilder.toString();
     }
 

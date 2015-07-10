@@ -30,12 +30,16 @@ public class AddedOffenceAdapter extends ArrayAdapter<LicenceOffence> {
         return convertView;
     }
 
+    @Override
+    public boolean isEnabled(int position) {
+        return false;
+    }
+
     private void setFields(View row, LicenceOffence current) {
         setDescription(row, current.getOffenceType());
         setRepetetion(row, current);
         setPenalty(row, current);
     }
-
 
     private void setDescription(View row, OffenceType current) {
         SystemUtil.setTextViewText(row, R.id.off_desc, current.getDescription());
