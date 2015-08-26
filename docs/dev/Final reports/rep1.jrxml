@@ -1,0 +1,1221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.1.0.final using JasperReports Library version 6.1.0  -->
+<!-- 2015-08-26T20:11:57 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report_1" pageWidth="1000" pageHeight="595" orientation="Landscape" columnWidth="960" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="961cac40-c23f-49de-a673-5ac0475c67a8">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Traffic"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 2_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 2_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 3_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 3_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 3_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 4_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 4_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 4_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 5_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 5_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 5_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 6_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 6_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 6_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 7_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 7_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 7_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 8_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 8_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 8_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 9_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 9_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 9_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 10_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 10_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 10_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 11_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 11_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 11_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 12_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 12_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 12_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 13_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 13_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 13_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 14_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 14_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 14_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 15_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 15_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 15_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 16_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 16_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 16_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 17_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 17_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 17_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 18_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 18_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 18_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 19_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 19_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 19_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Dataset1" uuid="e4dbe28a-51b9-4ecf-a62e-558b2038b2c0">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Traffic"/>
+		<queryString>
+			<![CDATA[#TOTAL NUM OF FINES ISSUED
+SELECT 
+    COUNT(fine) AS 'Tot_num_of_fines_issued'
+FROM
+    offence_new]]>
+		</queryString>
+		<field name="Tot_num_of_fines_issued" class="java.lang.Long"/>
+		<group name="Tot_num_of_fines_issued">
+			<groupExpression><![CDATA[$F{Tot_num_of_fines_issued}]]></groupExpression>
+		</group>
+	</subDataset>
+	<subDataset name="Dataset2" uuid="82f0ff0b-cc17-4a7b-bf03-69db81b55c4e">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Traffic"/>
+		<queryString>
+			<![CDATA[#TOTAL AMOUNT OF FINES ISSUED
+SELECT 
+    SUM(fine) AS 'Tot_amount_of_fine_issued'
+FROM
+    offence_new]]>
+		</queryString>
+		<field name="Tot_amount_of_fine_issued" class="java.lang.Double"/>
+	</subDataset>
+	<subDataset name="Dataset3" uuid="33d6d74a-1a7d-468f-88b4-815373bf9e4e">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Traffic"/>
+		<queryString>
+			<![CDATA[SELECT 
+    SUM(fine) AS 'Amount collected'
+FROM
+    offence_new
+WHERE
+    payment_status_id = 2 and payment_status_id=3]]>
+		</queryString>
+		<field name="Amount collected" class="java.lang.Double"/>
+	</subDataset>
+	<subDataset name="Dataset4" uuid="a263e8e6-5618-4ce9-9710-8973501e610f">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Traffic"/>
+		<queryString>
+			<![CDATA[#TOTAL AMOUNT COLLECTED 
+SELECT 
+    SUM(fine) AS 'Amount collected'
+FROM
+    offence_new
+WHERE
+    payment_status_id !=1]]>
+		</queryString>
+		<field name="Amount collected" class="java.lang.Double"/>
+	</subDataset>
+	<subDataset name="Dataset5" uuid="cbdf586e-5ced-404f-a1ec-56a34e818e2c">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Traffic"/>
+		<queryString>
+			<![CDATA[#NOT PAID ON SITE
+SELECT 
+    SUM(fine) AS 'Not_Paid-on-site fine'
+FROM
+    offence_new
+WHERE
+    payment_status_id != 2]]>
+		</queryString>
+		<field name="Not_Paid-on-site fine" class="java.lang.Double"/>
+	</subDataset>
+	<subDataset name="Dataset6" uuid="5cbd4ca2-f66c-4725-b993-c5635f4a4398">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Traffic"/>
+		<queryString>
+			<![CDATA[#NOT PAID 
+SELECT 
+    SUM(fine) AS 'Not_Paid_ fine'
+FROM
+    offence_new
+WHERE
+    payment_status_id=1]]>
+		</queryString>
+		<field name="Not_Paid_ fine" class="java.lang.Double"/>
+	</subDataset>
+	<subDataset name="Dataset7" uuid="2bc121dc-2fad-4e28-9546-629d16e5837c">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Traffic"/>
+		<queryString>
+			<![CDATA[#AVERAGE AMOUNT OF FINES ISSUED PER DAY
+SELECT 
+    sum / (SELECT DATEDIFF('', '')) AS avg_amt
+FROM
+    (SELECT 
+        SUM(fine) AS 'sum'
+    FROM
+        offence_new) sum_off]]>
+		</queryString>
+		<field name="avg_amt" class="java.lang.Double"/>
+	</subDataset>
+	<subDataset name="Dataset8" uuid="76970ee9-8709-4317-81f9-d5e19c61b000">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Traffic"/>
+		<parameter name="date1" class="java.sql.Date"/>
+		<parameter name="date2" class="java.sql.Date"/>
+		<queryString>
+			<![CDATA[#AVERAGE NUM OF FINES PER DAY
+SELECT 
+    count / (SELECT DATEDIFF($P{date1} , $P{date2})) AS avg_num
+FROM
+    (SELECT 
+        COUNT(fine) AS 'count'
+    FROM
+        offence_new) total_offence]]>
+		</queryString>
+		<field name="avg_num" class="java.math.BigDecimal"/>
+	</subDataset>
+	<subDataset name="Dataset9" uuid="b3dfdd01-d3dd-4b57-8000-e2b19906f50a">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Traffic"/>
+		<parameter name="date1" class="java.sql.Date"/>
+		<parameter name="date2" class="java.sql.Date">
+			<parameterDescription><![CDATA[]]></parameterDescription>
+		</parameter>
+		<queryString>
+			<![CDATA[#AVERAGE AMOUNT OF FINES ISSUED PER DAY
+SELECT 
+    sum / (SELECT DATEDIFF($P{date1} , $P{date2})) AS avg_amt_of_fines_issued_per_day
+FROM
+    (SELECT 
+        SUM(fine) AS 'sum'
+    FROM
+        offence_new) sum_off]]>
+		</queryString>
+		<field name="avg_amt_of_fines_issued_per_day" class="java.lang.Double"/>
+	</subDataset>
+	<subDataset name="Dataset10" uuid="1d0da005-7db4-41dd-8222-f8d4e321ba0e">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Traffic"/>
+		<queryString>
+			<![CDATA[#AVERAGE AMOUNT PER FINE        
+SELECT 
+    (SELECT 
+        SUM(fine) 
+    FROM
+        offence_new ) /(SELECT 
+        COUNT(fine) AS 'count'
+    FROM
+        offence_new) as avg_amt_per_fine]]>
+		</queryString>
+		<field name="avg_amt_per_fine" class="java.lang.Double"/>
+	</subDataset>
+	<subDataset name="Dataset11" uuid="5826f71f-b25b-4f84-b0ca-2b2f97c07128">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Traffic"/>
+		<parameter name="date1" class="java.sql.Date"/>
+		<parameter name="date2" class="java.sql.Date"/>
+		<queryString>
+			<![CDATA[#AVERAGE AMOUNT OF FINES COLLECTED PER DAY
+SELECT 
+    sum / (SELECT DATEDIFF($P{date1}, $P{date2})) AS avg_amt_collected_per_day
+FROM
+    (SELECT 
+        SUM(fine) AS 'sum'
+    FROM
+        offence_new
+        where payment_status_id=2) sum_off]]>
+		</queryString>
+		<field name="avg_amt_collected_per_day" class="java.lang.Double"/>
+	</subDataset>
+	<subDataset name="Dataset13" uuid="cc6cc3a2-5abc-44ce-b771-c79c4273c1bb">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Traffic"/>
+		<parameter name="pol_id" class="java.lang.Integer"/>
+		<queryString>
+			<![CDATA[SELECT 
+    *
+FROM
+    (SELECT 
+        `traffic_police`.id,
+            `offence_new`.offence_id,
+            `offence_new`.`offence_date`,
+            offence_new.panchayat
+    FROM
+        `offence_new`
+    INNER JOIN `traffic_police` ON `offence_new`.`police_id` = `traffic_police`.id
+    WHERE
+        traffic_police.id = $P{pol_id}
+    ORDER BY offence_new.offence_date DESC
+    LIMIT 1) tmp]]>
+		</queryString>
+		<field name="id" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="offence_id" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="offence_date" class="java.sql.Timestamp">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="panchayat" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="Dataset14" uuid="4967799e-7558-4e5c-8f52-7d7db274b610">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Traffic"/>
+		<parameter name="pol_id" class="java.lang.Integer"/>
+		<queryString>
+			<![CDATA[#IDLE SINCE
+SELECT 
+    d_day AS idle_since,
+    DATEDIFF( NOW(),d_day) AS for_num_of_days
+FROM
+    (SELECT 
+        `traffic_police`.id as police_id,
+            `offence_new`.offence_id,
+            `offence_new`.`offence_date` AS d_day
+    FROM
+        `offence_new`
+    INNER JOIN `traffic_police` ON `offence_new`.`police_id` = `traffic_police`.id
+    WHERE
+        traffic_police.id = $P{pol_id}
+    ORDER BY d_day DESC
+    LIMIT 1) tmp]]>
+		</queryString>
+		<field name="idle_since" class="java.sql.Timestamp"/>
+		<field name="for_num_of_days" class="java.lang.Long"/>
+	</subDataset>
+	<subDataset name="Dataset15" uuid="fe01e8c1-1e34-416c-ab4a-c6941cabe144">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Traffic"/>
+		<queryString>
+			<![CDATA[SELECT COUNT(offence_id) AS num_of_times_repeated
+FROM
+    offence_new
+    where repetition_count>1]]>
+		</queryString>
+		<field name="num_of_times_repeated" class="java.lang.Long"/>
+	</subDataset>
+	<subDataset name="Dataset16" uuid="8df6855d-ec13-451d-a85c-1d572decd9d0">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Traffic"/>
+		<queryString>
+			<![CDATA[SELECT 
+        (SUM(fine)) repeated_offence_fine
+    FROM
+        offence_new
+            where repetition_count>1]]>
+		</queryString>
+		<field name="repeated_offence_fine" class="java.lang.Double"/>
+	</subDataset>
+	<parameter name="rpt_date1" class="java.sql.Date"/>
+	<parameter name="rpt_date2" class="java.sql.Date"/>
+	<parameter name="rpt_pol_id" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[#TOTAL NUM OF FINES ISSUED
+SELECT 
+    COUNT(fine) AS 'Tot_num_of_fines_issued'
+FROM
+    offence_new]]>
+	</queryString>
+	<field name="Tot_num_of_fines_issued" class="java.lang.Long"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="110" splitType="Stretch">
+			<textField>
+				<reportElement x="403" y="13" width="100" height="30" uuid="69719377-3ea6-4a49-849f-3247193ee83b"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["SUMMARY"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="80" width="120" height="30" uuid="c868e187-34bf-469c-8540-617d808500ab"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[("To Date: ")+DATEFORMAT($P{rpt_date1},"dd-MM-yyyy")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="169" y="80" width="129" height="30" uuid="39f6dd0b-6616-44f3-92fd-dff79bac70e6"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[("Fom Date: ")+DATEFORMAT($P{rpt_date2},"dd-MM-yyyy" )]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="348" y="80" width="100" height="30" uuid="d249bb32-a9cd-446a-8d79-60ae2849e127"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[("POLICE ID: ")+$P{rpt_pol_id}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="309" splitType="Stretch">
+			<componentElement>
+				<reportElement x="0" y="10" width="160" height="60" uuid="c862b5a2-9920-41ba-b763-25e24f46af66"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Dataset1" uuid="bd53e9d7-364f-46ae-b958-370ecfb6f81e">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="160" uuid="c3f87903-cbf7-4470-9bc7-f7b922b65e37">
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement stretchType="RelativeToBandHeight" mode="Transparent" x="0" y="0" width="160" height="30" uuid="f418dcf0-7b0f-4452-a7e4-87a6b6675326"/>
+								<textElement>
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Tot_num_of_fines_issued]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="160" height="30" uuid="ed601d8b-8486-4b5b-a574-60dcdf79cf9d"/>
+								<textElement textAlignment="Left"/>
+								<textFieldExpression><![CDATA[$F{Tot_num_of_fines_issued}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement x="181" y="10" width="159" height="60" uuid="ef4b8ed8-357b-432f-8965-01a3da20fc7b"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Dataset2" uuid="ad32d607-3b96-41c9-a3cb-25b850771e10">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="159" uuid="29e0865c-aa19-413c-a96d-6537b3fd000e">
+						<jr:columnHeader style="Table 1_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="159" height="30" uuid="1e5a686c-0bd3-475e-b63c-c8aad0e09be3"/>
+								<text><![CDATA[Tot_amount_of_fine_issued]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 1_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="159" height="30" uuid="6c1343a8-13d6-4b5e-9caa-26d86c786e81"/>
+								<textFieldExpression><![CDATA[$F{Tot_amount_of_fine_issued}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement x="361" y="10" width="169" height="60" uuid="259e8580-d14c-4da5-9dd6-222c60a14b6d"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Dataset4" uuid="781fb163-c660-4f6d-9608-93f7c963637d">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="169" uuid="079f3d7c-2993-4b81-a7dc-d646e0f9d45c">
+						<jr:columnHeader style="Table 3_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="169" height="30" uuid="b7433402-830e-4943-8aa8-366576b6ceac"/>
+								<text><![CDATA[Amount collected]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 3_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="169" height="30" uuid="e2e2c64d-a432-4f3c-8402-039f7cb06eb0"/>
+								<textFieldExpression><![CDATA[$F{Amount collected}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement x="550" y="10" width="180" height="60" uuid="26a572db-81d3-47c1-b078-1950e4d58f81"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Dataset5" uuid="1efd9909-1646-4512-a99b-a76f80133ae9">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="180" uuid="05077e24-9ef2-49ef-bb28-0a0189adcf0b">
+						<jr:columnHeader style="Table 4_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="180" height="30" uuid="bb6cb3bb-b50c-422f-aa51-be75747aec3b"/>
+								<text><![CDATA[Not_Paid_on_site_fine]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 4_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="180" height="30" uuid="a1ef3777-fd4d-4293-9fb4-4098486fc745"/>
+								<textFieldExpression><![CDATA[$F{Not_Paid-on-site fine}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement x="751" y="10" width="170" height="60" uuid="40e57a31-a555-48e0-9405-198bfcc54f35"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Dataset6" uuid="f455db81-085c-482f-bbfd-8c6810be0bbb">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="170" uuid="a3332182-68d9-4417-bfd5-cd8a49147808">
+						<jr:columnHeader style="Table 6_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="170" height="30" uuid="4e374de5-5b99-44a6-9203-ddaab5780c95"/>
+								<text><![CDATA[Not_Paid_ fine]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 6_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="170" height="30" uuid="01c3f270-5871-4e36-92a4-ce8b02e7d3cb"/>
+								<textFieldExpression><![CDATA[$F{Not_Paid_ fine}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement x="0" y="113" width="160" height="60" uuid="cf9c06a4-0f1e-4fd9-984f-fa814540bc57"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Dataset8" uuid="b5bbd47d-8108-489c-a537-80c2fc35f3d6">
+						<datasetParameter name="date1">
+							<datasetParameterExpression><![CDATA[$P{rpt_date1}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="date2">
+							<datasetParameterExpression><![CDATA[$P{rpt_date2}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="160" uuid="ec759914-95a1-4c0b-8fa1-13333fe58cd7">
+						<jr:columnHeader style="Table 8_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="160" height="30" uuid="8844c0f4-869f-42a6-bfae-6fc1de4f3b95"/>
+								<text><![CDATA[avg_num_of_fines_per_day]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 8_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="160" height="30" uuid="5f406044-8420-4446-84ca-54e11f38c6df"/>
+								<textFieldExpression><![CDATA[$F{avg_num}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement x="180" y="113" width="159" height="60" uuid="49a439b2-04cf-4e92-9163-6609ef4ffd63"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Dataset9" uuid="774883e9-95e2-4bad-af73-8376e239032a">
+						<datasetParameter name="date1">
+							<datasetParameterExpression><![CDATA[$P{rpt_date1}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="date2">
+							<datasetParameterExpression><![CDATA[$P{rpt_date2}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="159" uuid="deb72418-7eae-42d3-bdc2-c0cd25c4e606">
+						<jr:columnHeader style="Table 9_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="159" height="30" uuid="3a7895a4-7859-4737-8049-dd4376a3d528"/>
+								<text><![CDATA[avg_amt_of_fines_issued_per_day]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 9_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="159" height="30" uuid="23a391e8-9f61-4baa-b717-ff4021908969"/>
+								<textFieldExpression><![CDATA[$F{avg_amt_of_fines_issued_per_day}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement x="360" y="113" width="169" height="60" uuid="107752f7-ff7f-4ab7-a88b-570c4f94bff2"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Dataset10" uuid="9e8767d0-cc74-4281-96e5-9cd4fe62c7ba">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="169" uuid="e343aac5-8093-4785-b738-6d59f9a34ffc">
+						<jr:columnHeader style="Table 10_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="169" height="30" uuid="f50f3810-883d-4912-bcff-9d61bd3c90e4"/>
+								<text><![CDATA[avg_amt_per_fine]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 10_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="169" height="30" uuid="638930b6-f309-4576-b2b8-fa6facc10b97"/>
+								<textFieldExpression><![CDATA[$F{avg_amt_per_fine}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement positionType="FixRelativeToBottom" x="550" y="113" width="180" height="60" uuid="7dfbd370-c78c-45ee-9cfe-bb7beb591f77"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Dataset11" uuid="ed216ebd-732c-41d8-9898-ef33a5326973">
+						<datasetParameter name="date1">
+							<datasetParameterExpression><![CDATA[$P{rpt_date1}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="date2">
+							<datasetParameterExpression><![CDATA[$P{rpt_date2}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="180" uuid="a08366ab-30c0-4e06-adbe-de9f58b634f5">
+						<jr:columnHeader style="Table 11_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="180" height="30" uuid="160ce092-7012-4627-aceb-16c75ebb6ba3"/>
+								<text><![CDATA[avg_amt_collected_per_day]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 11_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="180" height="30" uuid="ac4531c5-587f-4d29-a847-830989ae7f44"/>
+								<textFieldExpression><![CDATA[$F{avg_amt_collected_per_day}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement x="0" y="220" width="220" height="60" uuid="59e05e3f-6408-4cbf-8f51-af09ecf2fa8c"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Dataset13" uuid="e92b9022-6ada-411c-9048-3b5c1406facf">
+						<datasetParameter name="pol_id">
+							<datasetParameterExpression><![CDATA[$P{rpt_pol_id}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="50" uuid="2a108c66-393a-41cb-acd3-dc8fc1321f23">
+						<jr:columnHeader style="Table 14_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="50" height="30" uuid="102e1ca6-2566-43d5-af24-1502b7e2d633"/>
+								<text><![CDATA[police_id]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 14_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="50" height="30" uuid="dce803d3-9cf4-4b7e-99f8-574960feaca2"/>
+								<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="50" uuid="aefeae8a-7298-424c-ba36-42c575ae896d">
+						<jr:columnHeader style="Table 14_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="50" height="30" uuid="94cdfb71-7aae-4161-ba16-19dcd6e3f11e"/>
+								<text><![CDATA[offence_id]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 14_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="50" height="30" uuid="f4aec33d-cd92-4d9b-bccd-5f6b9a88f3c6"/>
+								<textFieldExpression><![CDATA[$F{offence_id}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="60" uuid="79a8a665-fd17-4f5d-bb94-44251cdfc48e">
+						<jr:columnHeader style="Table 14_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="60" height="30" uuid="5a93c74a-a92b-476b-beed-183202632ad8"/>
+								<text><![CDATA[offence_date]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 14_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="60" height="30" uuid="d4cda524-32e5-4563-b550-864ee55e892a"/>
+								<textFieldExpression><![CDATA[$F{offence_date}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="60" uuid="3319a694-7882-4c9d-9647-fb0561fb6c0b">
+						<jr:columnHeader style="Table 14_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="60" height="30" uuid="f184302e-3e77-406c-bad3-4a7837a19e33"/>
+								<text><![CDATA[panchayat]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 14_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="60" height="30" uuid="dece9200-d29b-4c0b-a353-82fbc1028939"/>
+								<textFieldExpression><![CDATA[$F{panchayat}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement x="241" y="220" width="200" height="60" uuid="966ff88a-82a7-4561-9e83-e0996d71dc46"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Dataset14" uuid="6c0ec776-7323-436c-b9a8-9ef9f48d8412">
+						<datasetParameter name="pol_id">
+							<datasetParameterExpression><![CDATA[$P{rpt_pol_id}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="100" uuid="4f04898f-7503-4863-908e-fd271e6efb72">
+						<jr:columnHeader style="Table 15_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="100" height="30" uuid="4224cb2b-1f8f-48e4-8f0e-45328965e823"/>
+								<text><![CDATA[idle_since]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 15_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="100" height="30" uuid="f5e99d2c-bc44-4c36-96d3-3f4d5d5bb477"/>
+								<textFieldExpression><![CDATA[$F{idle_since}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="100" uuid="c12ea4d0-6816-465c-804a-9da82e0f1dfd">
+						<jr:columnHeader style="Table 15_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="100" height="30" uuid="8bc86b0e-47bd-4acb-83e2-b6e8d97f3a0d"/>
+								<text><![CDATA[for_num_of_days]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 15_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="100" height="30" uuid="889b9bc2-003f-4045-9726-37f338037ded"/>
+								<textFieldExpression><![CDATA[$F{for_num_of_days}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement x="461" y="220" width="200" height="60" uuid="de37bf75-9581-4e1e-8641-be859f3a6725"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Dataset15" uuid="879fd95f-df87-4d88-b016-20b0fa91bc5a">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="200" uuid="7d837627-a35c-4372-982e-ae65aa40ecd5">
+						<jr:columnHeader style="Table 17_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="200" height="30" uuid="cf2ab223-73f1-4280-b2dc-45abdf48d492"/>
+								<text><![CDATA[num_of_times_repeated]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 17_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="200" height="30" uuid="426e3264-809a-4944-b790-e908dbb04424"/>
+								<textFieldExpression><![CDATA[$F{num_of_times_repeated}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement x="681" y="220" width="200" height="60" uuid="cf69dbd9-ee53-4785-b83d-9121145b7baf"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Dataset16" uuid="61ad5c17-23c3-439d-aac4-60ca74262fc9">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="200" uuid="b79d40da-dd85-4102-8c6a-3fd40766e16b">
+						<jr:columnHeader style="Table 19_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="200" height="30" uuid="939591b8-19f0-4d6d-8bef-8daef019eaf5"/>
+								<text><![CDATA[repeated_offence_fine]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 19_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="200" height="30" uuid="a2be8a22-0782-4e31-82a4-e73fe404a87d"/>
+								<textFieldExpression><![CDATA[$F{repeated_offence_fine}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="103" splitType="Stretch"/>
+	</columnFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
